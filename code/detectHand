@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $@ -eq 0 ]
+then
+	echo "Usage: ./detectHand 'relative path to open cv samples folder'"
+else
+	path=$1
+	cp * $path/
+	echo "done copying starting hand detection code..."
+	cd $path
+	python handdetect.py --cascade cascade.xml
+fi
+
